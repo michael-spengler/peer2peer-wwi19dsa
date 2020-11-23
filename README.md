@@ -1,5 +1,9 @@
 # peer2peer-wwi19dsa
 
-## About
+## Run this project locally
 
-This is our fancy project
+```sh
+
+deno run --allow-net --allow-read ./server/server.ts
+
+```
