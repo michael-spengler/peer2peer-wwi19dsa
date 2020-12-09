@@ -4,33 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="Code\lib\css\bootstrap_v4.min.css">
+    <link rel="stylesheet" href="lib\css\bootstrap.css">
 
-    <script src="Code\lib\typescript\bootstrap_v4.min.js"></script>
-    <script src="Code\lib\typescript\jquery_v3.2.1.min.js"></script>
-    <script src="Code\lib\typescript\popper_v1.12.9.min.js"></script>
+    <script src="lib\typescript\bootstrap.js"></script>
+    <script src="lib\typescript\jquery_v3.5.1.js"></script>
+    <script src="lib\typescript\popper_v1.5.4.js"></script>
 
     <title>Login</title>
   </head>
-  <body style="padding-left:5%; padding-right:5%;">
+  <body style="padding:5%;">
     
-    <div class="container-fluid">
+    <div class = "container-fluid">
       <div class="row">
-        <div class="col-md-5 col-sm-12">
-         <div class="form-group">
-            <label for="emailinput">Email Adresse</label>
-            <input type="email" class="form-control" id="emailinput"  placeholder="Enter email">
+        <div class="col-md-6">
+          <div class="container-fluid">
+            <div class="row">
+              
+                <div class="form-group">
+                  <label for="emailinput">Email Adresse</label>
+                  <input type="email" class="form-control" id="emailinput"  placeholder="Enter email">
+                </div>
+              
+              
+                <div class="form-group">
+                  <label for="passwordinput">Passwort</label>
+                  <input type="password" class="form-control" id="passwordinput" placeholder="Enter password">
+                </div>
+             
+              
+                <button class="btn btn-primary" onclick="Login()" id="loginbutton">Login</button>
+              
+            </div>
           </div>
         </div>
-        <div class="col-md-5 col-sm-12">
-          <div class="form-group">
-            <label for="passwordinput">Passwort</label>
-            <input type="password" class="form-control" id="passwordinput" placeholder="Enter password">
-          </div>
+
+        <div class="col-md-6">
+          <img src="media\templates\1024px-Square_200x200.svg.png" class="rounded ratio ratio-1x1" alt="Test">
         </div>
-        <div class="col-md-2 col-sm-12" style="position: relative; padding-top: 2em;">
-          <button class="btn btn-primary" onclick="Login()" id="loginbutton">Login</button>
-        </div>
+
       </div>
     </div>
 
