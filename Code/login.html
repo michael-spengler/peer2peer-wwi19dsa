@@ -23,18 +23,19 @@
                 <div class="form-group mb-3">
                   <label for="emailinput">Email Adresse</label>
                   <input type="email" class="form-control input" id="emailinput"  placeholder="Enter email">
-                  <small class="text-muted form-text" id="emailhint"></small>
+                  <small class="text-danger form-text" id="emailhint"></small>
                 </div>
               
               
                 <div class="form-group">
                   <label for="passwordinput">Passwort</label>
                   <input type="password" class="form-control input" id="passwordinput" placeholder="Enter password">
-                  <small class="text-muted form-text" id="passwordhint"></small>
+                  <small class="text-danger form-text" id="passwordhint"></small>
                 </div>
              
                 <div class="form-group">
-                  <button class="btn btn-outline-primary mt-3" onclick="Login()" id="loginbutton">Login</button>
+                  <button class="btn btn-outline-secondary mt-3" onclick="Login()" id="loginbutton">Login</button>
+                  <small class="text-danger form-text" id="loginhint"></small>
                 </div>
             </div>
           </div>
@@ -57,28 +58,65 @@
       var passwordInput=$("#passwordinput");
       var passwordHint=$("#passwordhint");
       var loginButton=$("#loginbutton");
+      var loginHint=$("#loginhint");
 
       var input=$(".input");
+      var validmail=false;
+      var validpw=false;
 
-      function Login(){
-        if (Kunden[0].includes(emailInput.val()) && Kunden[1].includes(passwordInput.val())){
-          input.css("border-color", "green");
+      function onKeyUpMail(){
+        if (emailInput.val().includes("@")){
+          emailHint.text("");
+          validmail=true;
         }
-        else {
-          input.css("border-color", "red");
+        else{
+          emailHint.text("Bitte geben Sie eine gültige E-Mail ein.");
+          validmail=false;
         }
       }
 
+      function onKeyUpPw(){
+        if (passwordInput.val().length>=4){
+          passwordHint.text("");
+          validpw=true;
+        }
+        else{
+          passwordHint.text("Das Passwort muss mindestens 4 Zeichen lang sein");
+          validpw=false;
+        }
+      }
 
-      function onKeyPress(){
-        input.css("border-color", "");
+      function Login(){
+        if(validmail && validpw){
+          var test=false;
+          for (var i=0;i<Kunden.length;i++){
+            if(Kunden[i][0]==emailInput.val() && Kunden[i][1]==passwordInput.val()){
+              test=true;
+              break;
+            }
+          }
+          if(test){
+           location.href='https://www.google.com';
+          }
+          else{
+            loginHint.text("Email oder Passwort falsch.");
+          }
+        }
+        else{
+          loginHint.text("Bitte geben Sie gültige Daten in die obenstehenden Felder ein.");
+        }
+      }
+
+      function onKeyUp(){
+        loginHint.text("");
       }
 
       $(function(){
-        emailInput.on("keypress",onKeyPress());
-        passwordInput.on("keypress",onKeyPress());
+        emailInput.on("keyup",onKeyUp);
+        emailInput.on("keyup",onKeyUpMail);
+        passwordInput.on("keyup",onKeyUp);
+        passwordInput.on("keyup",onKeyUpPw);
       });
-
 
 
 
