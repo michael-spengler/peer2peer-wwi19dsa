@@ -4,7 +4,7 @@
 
 ```sh
 
-deno run --allow-net --allow-read ./server/server.ts
+deno run --allow-net --allow-all ./server/server.ts
 
 ```
 
