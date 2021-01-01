@@ -1,0 +1,34 @@
+#impressum {
+    background-color: #2EB0B9;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border: none;
+    
+}
+
+#button-impressum {
+    color: white;
+    background-color: #2EB0B9 ;
+    border: none;
+    width: 30%;
+    height: 16%;
+    font-size: 12px;
+    
+    
+}
+
+#input {
+    
+    background-color: lightblue;
+    border-radius: 3px;
+    border: none;
+    width: 50%;
+    height: 20%;
+    font-size: 12px;
+    margin-left: 15%;
+}
+::placeholder {
+    color: white;
+}
