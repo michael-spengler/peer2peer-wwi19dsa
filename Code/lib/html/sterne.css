@@ -1,0 +1,14 @@
+.sterne{
+    padding-top: 60px;
+}
+.star{
+    font-size: 25px;
+}
+.card{
+    width: 200px;
+    height: 80px;
+    border-color: transparent;
+}
+.card-title{
+    font-size: 20px;
+}

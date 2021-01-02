@@ -1,0 +1,47 @@
+.title-img{
+    background: no-repeat url("images/1.Angebot-Bild.png");
+    height: 500px;
+    width: 700px;
+    background-position: center;
+}
+
+#main{
+    position: static;
+}
+.sicht{
+    width: 450px;
+    height: 170px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gray;
+}
+.thema{
+    font-weight: 400;
+    font-size: 15px;
+}
+.angebot-title{
+    font-size: 25px;
+}
+.preise{
+    font-size: 20px;
+    color: red;
+}
+.beschreibung-absatz{
+    font-size: 20px;
+    font-weight: 600;
+    width: 400px;
+}
+.knoepfe{
+    padding-right: 180px;
+}
+.btn{
+    color: black;
+    border-color: gray;
+    border-width: thick;
+    background-color: transparent;
+    font-size: 20px;
+    height: 50px;
+    width: 400px;
+}
+
+ 
