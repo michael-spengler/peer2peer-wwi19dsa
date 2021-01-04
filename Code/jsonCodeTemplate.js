@@ -1,9 +1,17 @@
 import { writeJsonSync, readJsonSync} from "https://deno.land/x/jsonfile/mod.ts";
 //Lade Read + Write Function
 
+
+//Block - Daten lesen / auswerten #############################
+
+var daten = await readJsonSync("./dateiname.json");
+//Daten auslesen und zwischenspeichern
+
+
 //Block - Daten Schreiben #############################
 
-var daten = [];
+// var daten = [];    //-> nur wenn es komplett neue Daten wären
+
 daten.push({ attribut:"daten" });  // = appendLine 
                                    // Nutzerdaten benötigen mindestens Attribut Key
 
@@ -14,11 +22,6 @@ writeJsonSync(                     // export, Standardfunktion
 
 //####################################################
 
-
-//Block - Daten lesen / auswerten #############################
-
-var daten = await readJsonSync("./dateiname.json");
-//Daten auslesen und zwischenspeichern
 
 
 
@@ -34,8 +37,8 @@ function getUserData(pdata, pkeyvalue){
     }
 
     if (index != 0){
-        return (pdata[index])
-    } else {
+        return (pdata[index])                   //-> nur auslesenn, wenn daten bearbeitet werden soll, dann muss pdata.splice[index, 1] verwendet werden 
+    } else {                                    //-> zwingend dann auch Write befehl, oder: Dritter Parameter in Splice zum überschreiben
         console.log("Error: User Not Found")
     }
     
@@ -59,9 +62,10 @@ function wertPrüfen(pData, pValue){
     }
 }
 
-wertPrüfen(attribut, wert);
+wertPrüfen(readData, wert);
 
 
 //####################################################
+
 
 
