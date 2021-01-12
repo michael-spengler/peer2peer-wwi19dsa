@@ -14,79 +14,150 @@
   </head>
   <body style="padding:5%;">
 
+    <div class="container-fluid m-5">
 
+      <h3>Sign Up</h3>
+
+      <form>
+        <div class="mb-3">
+          <label for="Sign_Up_Username" class="form-label">Username</label>
+          <input class="form-control" id="Sign_Up_Username">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password_Confirm" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password_Confirm">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_Up_Email">
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="Register()" id="Sign_Up_Button">Sign Up</button>
+
+      </form>
+
+    </div>
     
+    <div class="container-fluid m-5">
+
+      <h3>Sign In</h3>
+
+      <form>
+
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_In_Email">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_In_Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="Login()" id="Sign_In_Button">Sign In</button>
+
+      </form>
+
+    </div>
 
   </body>
   
   <script>
 
-    // var Kunden = [["test@test.de","vergessen"]];
+    
+    // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
+    //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
+    // Bei etwaigen Vergleichen wird der entsprechende Eintrag der Liste mit dem zu erfüllenden Wert verglichen
 
-    // var emailInput=$("#emailinput");
-    // var emailHint=$("#emailhint");
-    // var passwordInput=$("#passwordinput");
-    // var passwordHint=$("#passwordhint");
-    // var loginButton=$("#loginbutton");
-    // var loginHint=$("#loginhint");
+    // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
 
-    // var input=$(".input");
-    // var validmail=false;
-    // var validpw=false;
+    var Nutzerliste = [["Benutzer","Email","Passwort"]];
 
-    // function onKeyUpMail(){
-    //   if (emailInput.val().includes("@")){
-    //     emailHint.text("");
-    //     validmail=true;
-    //   }
-    //   else{
-    //     emailHint.text("Bitte geben Sie eine gültige E-Mail ein.");
-    //     validmail=false;
-    //   }
-    // }
 
-    // function onKeyUpPw(){
-    //   if (passwordInput.val().length>=4){
-    //     passwordHint.text("");
-    //     validpw=true;
-    //   }
-    //   else{
-    //     passwordHint.text("Das Passwort muss mindestens 4 Zeichen lang sein");
-    //     validpw=false;
-    //   }
-    // }
+    // Variablen Sign Up (Register)
 
-    // function Login(){
-    //   if(validmail && validpw){
-    //     var test=false;
-    //     for (var i=0;i<Kunden.length;i++){
-    //       if(Kunden[i][0]==emailInput.val() && Kunden[i][1]==passwordInput.val()){
-    //         test=true;
-    //         break;
-    //       }
-    //     }
-    //     if(test){
-    //      location.href='https://www.google.com';
-    //     }
-    //     else{
-    //       loginHint.text("Email oder Passwort falsch.");
-    //     }
-    //   }
-    //   else{
-    //     loginHint.text("Bitte geben Sie gültige Daten in die obenstehenden Felder ein.");
-    //   }
-    // }
 
-    // function onKeyUp(){
-    //   loginHint.text("");
-    // }
+    var Sign_Up_Username=$("#Sign_Up_Username");
 
-    // $(function(){
-    //   emailInput.on("keyup",onKeyUp);
-    //   emailInput.on("keyup",onKeyUpMail);
-    //   passwordInput.on("keyup",onKeyUp);
-    //   passwordInput.on("keyup",onKeyUpPw);
-    // });
+
+    var Sign_Up_Email=$("#Sign_Up_Email");
+
+
+    var Sign_Up_Password=$("#Sign_Up_Password");
+
+
+    var Sign_Up_Password_Confirm=$("#Sign_Up_Password_Confirm");
+
+
+    // Variablen Sign In (Login)
+
+
+    var Sign_In_Email=$("#Sign_In_Email");
+
+
+    var Sign_In_Password=$("#Sign_In_Password");
+
+
+    // Zusatzvariblen
+
+    /*
+
+    */
+
+
+    //Register
+
+    function Register(){
+
+      if(Sign_Up_Password.val()==Sign_Up_Password_Confirm.val()){
+
+        //Nutzerliste wird am Ende um entsprechenden Eintrag ergänzt
+        Nutzerliste.push([Sign_Up_Username.val(),Sign_Up_Email.val(),Sign_Up_Password.val()]);
+
+        console.log(Nutzerliste[Nutzerliste.length-1]);
+
+      }
+      else{
+        console.log("Pw stimmen nicht überein")
+      }
+
+    }
+
+
+    //Login
+
+
+    function Login(){
+    
+      var test=false;
+
+      for (var i=0;i<Nutzerliste.length;i++){
+        if(Nutzerliste[i][1]==Sign_In_Email.val() && Nutzerliste[i][2]==Sign_In_Password.val()){
+          test=true;
+          break;
+        }
+      }
+      if(test){
+        location.href='https://www.google.com';
+        console.log("Erfolg");
+      }
+      else{
+        console.log("Fehler");
+      }
+    }
+
+
+
+
+    //INIT
+
+    /*
+
+    */
+
 
 
 
