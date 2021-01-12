@@ -13,128 +13,156 @@
     <title>Login</title>
   </head>
   <body style="padding:5%;">
+
+    <div class="container-fluid m-5">
+
+      <h3>Sign Up</h3>
+
+      <form>
+        <div class="mb-3">
+          <label for="Sign_Up_Username" class="form-label">Username</label>
+          <input class="form-control" id="Sign_Up_Username">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password_Confirm" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password_Confirm">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_Up_Email">
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="Register()" id="Sign_Up_Button">Sign Up</button>
+
+      </form>
+
+    </div>
     
-    <div class = "container-fluid">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <div class="container-fluid">
-            <div class="row m-auto">
-              
-                <div class="form-group mb-3">
-                  <label for="emailinput">Email Adresse</label>
-                  <input type="email" class="form-control input" id="emailinput"  placeholder="Enter email">
-                  <small class="text-danger form-text" id="emailhint"></small>
-                </div>
-              
-              
-                <div class="form-group">
-                  <label for="passwordinput">Passwort</label>
-                  <input type="password" class="form-control input" id="passwordinput" placeholder="Enter password">
-                  <small class="text-danger form-text" id="passwordhint"></small>
-                </div>
-             
-                <div class="form-group">
-                  <button class="btn btn-outline-secondary mt-3" onclick="Login()" id="loginbutton">Login</button>
-                  <small class="text-danger form-text" id="loginhint"></small>
-                </div>
-            </div>
-          </div>
+    <div class="container-fluid m-5">
+
+      <h3>Sign In</h3>
+
+      <form>
+
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_In_Email">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_In_Password">
         </div>
 
-        <div class="col-md-6">
-          <img src="media\templates\1024px-Square_200x200.svg.png" class="rounded ratio ratio-1x1" alt="Test">
-        </div>
+        <button type="submit" class="btn btn-primary" onclick="Login()" id="Sign_In_Button">Sign In</button>
 
-      </div>
+      </form>
+
     </div>
 
-
-    <script>
-
-      var Kunden = [["test@test.de","vergessen"]];
-
-      var emailInput=$("#emailinput");
-      var emailHint=$("#emailhint");
-      var passwordInput=$("#passwordinput");
-      var passwordHint=$("#passwordhint");
-      var loginButton=$("#loginbutton");
-      var loginHint=$("#loginhint");
-
-      var input=$(".input");
-      var validmail=false;
-      var validpw=false;
-
-      function onKeyUpMail(){
-        if (emailInput.val().includes("@")){
-          emailHint.text("");
-          validmail=true;
-        }
-        else{
-          emailHint.text("Bitte geben Sie eine gültige E-Mail ein.");
-          validmail=false;
-        }
-      }
-
-      function onKeyUpPw(){
-        if (passwordInput.val().length>=4){
-          passwordHint.text("");
-          validpw=true;
-        }
-        else{
-          passwordHint.text("Das Passwort muss mindestens 4 Zeichen lang sein");
-          validpw=false;
-        }
-      }
-
-      function Login(){
-        if(validmail && validpw){
-          var test=false;
-          for (var i=0;i<Kunden.length;i++){
-            if(Kunden[i][0]==emailInput.val() && Kunden[i][1]==passwordInput.val()){
-              test=true;
-              break;
-            }
-          }
-          if(test){
-           location.href='https://www.google.com';
-          }
-          else{
-            loginHint.text("Email oder Passwort falsch.");
-          }
-        }
-        else{
-          loginHint.text("Bitte geben Sie gültige Daten in die obenstehenden Felder ein.");
-        }
-      }
-
-      function onKeyUp(){
-        loginHint.text("");
-      }
-
-      $(function(){
-        emailInput.on("keyup",onKeyUp);
-        emailInput.on("keyup",onKeyUpMail);
-        passwordInput.on("keyup",onKeyUp);
-        passwordInput.on("keyup",onKeyUpPw);
-      });
-
-
-
-
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
   </body>
+  
+  <script>
+
+    
+    // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
+    //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
+    // Bei etwaigen Vergleichen wird der entsprechende Eintrag der Liste mit dem zu erfüllenden Wert verglichen
+
+    // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
+
+    var Nutzerliste = [["Benutzer","Email","Passwort"]];
+
+
+    // Variablen Sign Up (Register)
+
+
+    var Sign_Up_Username=$("#Sign_Up_Username");
+
+
+    var Sign_Up_Email=$("#Sign_Up_Email");
+
+
+    var Sign_Up_Password=$("#Sign_Up_Password");
+
+
+    var Sign_Up_Password_Confirm=$("#Sign_Up_Password_Confirm");
+
+
+    // Variablen Sign In (Login)
+
+
+    var Sign_In_Email=$("#Sign_In_Email");
+
+
+    var Sign_In_Password=$("#Sign_In_Password");
+
+
+    // Zusatzvariblen
+
+    /*
+
+    */
+
+
+    //Register
+
+    function Register(){
+
+      if(Sign_Up_Password.val()==Sign_Up_Password_Confirm.val()){
+
+        //Nutzerliste wird am Ende um entsprechenden Eintrag ergänzt
+        Nutzerliste.push([Sign_Up_Username.val(),Sign_Up_Email.val(),Sign_Up_Password.val()]);
+
+        console.log(Nutzerliste[Nutzerliste.length-1]);
+
+      }
+      else{
+        console.log("Pw stimmen nicht überein")
+      }
+
+    }
+
+
+    //Login
+
+
+    function Login(){
+    
+      var test=false;
+
+      for (var i=0;i<Nutzerliste.length;i++){
+        if(Nutzerliste[i][1]==Sign_In_Email.val() && Nutzerliste[i][2]==Sign_In_Password.val()){
+          test=true;
+          break;
+        }
+      }
+      if(test){
+        location.href='https://www.google.com';
+        console.log("Erfolg");
+      }
+      else{
+        console.log("Fehler");
+      }
+    }
+
+
+
+
+    //INIT
+
+    /*
+
+    */
+
+
+
+
+
+
+  </script>
+
 </html>
