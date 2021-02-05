@@ -11,6 +11,62 @@
     <script src="lib\typescript\popper_v2.5.4.js"></script>-->
 
     <title>Login</title>
+
+    <script>
+    
+      // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
+      //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
+      // Bei etwaigen Vergleichen wird der entsprechende Eintrag der Liste mit dem zu erfüllenden Wert verglichen
+  
+      // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
+  
+      var Nutzerliste = [];
+  
+  
+      // Variablen Sign Up (Register)
+  
+  
+      var Sign_Up_Username=document.getElementById("Sign_Up_Username");
+  
+  
+      var Sign_Up_Email=document.getElementById("Sign_Up_Email");
+      
+      
+      var Sign_Up_Password=document.getElementById("Sign_Up_Password");
+      
+      
+      var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
+      
+      function registrieren() {
+        console.log("Email Input: ",Sign_Up_Email.value)
+        
+        fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+        { headers: {'Content-Type': 'application/json'}, 
+        method: "POST", 
+        body: JSON.stringify({ Sign_Up_Username: Sign_Up_Username.value, Sign_Up_Email: Sign_Up_Email.value, Sign_Up_Password:Sign_Up_Password.value, Sign_Up_Password_Confirm:Sign_Up_Password_Confirm.value })})
+        .then(() => console.log('ready'))
+        console.log("stringify output: ",JSON.stringify({ "Sign_Up_Username": Sign_Up_Username.value, "Sign_Up_Email": Sign_Up_Email.value, "Sign_Up_Password":Sign_Up_Password.value, "Sign_Up_Password_Confirm":Sign_Up_Password_Confirm.value }))
+      }
+      
+      
+      async function login() {
+        alert('here we go')
+        var Sign_In_Email=document.getElementById("Sign_In_Email");
+        var Sign_In_Password=document.getElementById("Sign_In_Password");
+        console.log("Email Input: ",Sign_In_Email.value)
+  
+        fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+        { headers: {'Content-Type': 'application/json'}, 
+        method: "POST", 
+        body: JSON.stringify({ Sign_In_Email: Sign_In_Email.value, Sign_In_Password:Sign_In_Password.value })})
+          .then(() => console.log('ready'))
+        console.log("stringify output: ",JSON.stringify({ "Sign_In_Email": Sign_In_Email.value, "Sign_In_Password":Sign_In_Password.value }))
+      }
+      // Variablen für Sign_In
+  
+ 
+  
+    </script>
   </head>
   <body style="padding:5%;">
 
@@ -46,7 +102,6 @@
 
       <h3>Sign In</h3>
 
-      <form>
 
         <div class="mb-3">
           <label for="Sign_Up_Email" class="form-label">Email Address</label>
@@ -57,58 +112,13 @@
           <input type="password" class="form-control" id="Sign_In_Password">
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="Login()" id="Sign_In_Button">Sign In</button>
+        <button type="submit" class="btn btn-primary" onclick="login()" id="Sign_In_Button">Sign In</button>
 
-      </form>
 
     </div>
 
   </body>
   
-  <script>
-    
-    // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
-    //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
-    // Bei etwaigen Vergleichen wird der entsprechende Eintrag der Liste mit dem zu erfüllenden Wert verglichen
-
-    // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
-
-    var Nutzerliste = [];
-
-
-    // Variablen Sign Up (Register)
-
-
-    var Sign_Up_Username=document.getElementById("Sign_Up_Username");
-
-
-    var Sign_Up_Email=document.getElementById("Sign_Up_Email");
-
-
-    var Sign_Up_Password=document.getElementById("Sign_Up_Password");
-
-
-    var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
-
-    function registrieren() {
-      console.log("Email Input: ",Sign_Up_Email.value)
-
-      fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
-      { headers: {'Content-Type': 'application/json'}, 
-      method: "POST", 
-      body: JSON.stringify({ Sign_Up_Username: Sign_Up_Username.value, Sign_Up_Email: Sign_Up_Email.value, Sign_Up_Password:Sign_Up_Password.value, Sign_Up_Password_Confirm:Sign_Up_Password_Confirm.value })})
-        .then(() => console.log('ready'))
-      console.log("stringify output: ",JSON.stringify({ "Sign_Up_Username": Sign_Up_Username.value, "Sign_Up_Email": Sign_Up_Email.value, "Sign_Up_Password":Sign_Up_Password.value, "Sign_Up_Password_Confirm":Sign_Up_Password_Confirm.value }))
-    }
-
-    // Variablen für Sign_In
-
-    var Sign_In_Email=document.getElementById("Sign_In_Email");
-
-
-    var Sign_In_Password=document.getElementById("Sign_In_Password");
-
-
-  </script>
+  
 
 </html>
