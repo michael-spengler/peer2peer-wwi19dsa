@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="lib\css\bootstrap.css">
+    <!--<link rel="stylesheet" href="lib\css\bootstrap.css">-->
 
-    <script src="lib\typescript\bootstrap.js"></script>
+    <!--<script src="lib\typescript\bootstrap.js"></script>
     <script src="lib\typescript\jquery_v3.5.1.js"></script>
-    <script src="lib\typescript\popper_v1.5.4.js"></script>
+    <script src="lib\typescript\popper_v2.5.4.js"></script>-->
 
     <title>Login</title>
   </head>
@@ -18,7 +18,7 @@
 
       <h3>Sign Up</h3>
 
-      <form>
+      <form id="signUpForm" action="userSignUp" method="post">
         <div class="mb-3">
           <label for="Sign_Up_Username" class="form-label">Username</label>
           <input class="form-control" id="Sign_Up_Username">
@@ -36,7 +36,7 @@
           <input type="email" class="form-control" id="Sign_Up_Email">
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="Register()" id="Sign_Up_Button">Sign Up</button>
+        <a type="link" class="btn btn-primary" onclick="registrieren()" id="Sign_Up_Button">Sign Up</a>
 
       </form>
 
@@ -66,7 +66,6 @@
   </body>
   
   <script>
-
     
     // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
     //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
@@ -74,93 +73,40 @@
 
     // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
 
-    var Nutzerliste = [["Benutzer","Email","Passwort"]];
+    var Nutzerliste = [];
 
 
     // Variablen Sign Up (Register)
 
 
-    var Sign_Up_Username=$("#Sign_Up_Username");
+    var Sign_Up_Username=document.getElementById("Sign_Up_Username");
 
 
-    var Sign_Up_Email=$("#Sign_Up_Email");
+    var Sign_Up_Email=document.getElementById("Sign_Up_Email");
 
 
-    var Sign_Up_Password=$("#Sign_Up_Password");
+    var Sign_Up_Password=document.getElementById("Sign_Up_Password");
 
 
-    var Sign_Up_Password_Confirm=$("#Sign_Up_Password_Confirm");
+    var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
 
+    function registrieren() {
+      console.log("Email Input: ",Sign_Up_Email.value)
 
-    // Variablen Sign In (Login)
-
-
-    var Sign_In_Email=$("#Sign_In_Email");
-
-
-    var Sign_In_Password=$("#Sign_In_Password");
-
-
-    // Zusatzvariblen
-
-    /*
-
-    */
-
-
-    //Register
-
-    function Register(){
-
-      if(Sign_Up_Password.val()==Sign_Up_Password_Confirm.val()){
-
-        //Nutzerliste wird am Ende um entsprechenden Eintrag ergänzt
-        Nutzerliste.push([Sign_Up_Username.val(),Sign_Up_Email.val(),Sign_Up_Password.val()]);
-
-        console.log(Nutzerliste[Nutzerliste.length-1]);
-
-      }
-      else{
-        console.log("Pw stimmen nicht überein")
-      }
-
+      fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+      { headers: {'Content-Type': 'application/json'}, 
+      method: "POST", 
+      body: JSON.stringify({ Sign_Up_Username: Sign_Up_Username.value, Sign_Up_Email: Sign_Up_Email.value, Sign_Up_Password:Sign_Up_Password.value, Sign_Up_Password_Confirm:Sign_Up_Password_Confirm.value })})
+        .then(() => console.log('ready'))
+      console.log("stringify output: ",JSON.stringify({ "Sign_Up_Username": Sign_Up_Username.value, "Sign_Up_Email": Sign_Up_Email.value, "Sign_Up_Password":Sign_Up_Password.value, "Sign_Up_Password_Confirm":Sign_Up_Password_Confirm.value }))
     }
 
+    // Variablen für Sign_In
 
-    //Login
-
-
-    function Login(){
-    
-      var test=false;
-
-      for (var i=0;i<Nutzerliste.length;i++){
-        if(Nutzerliste[i][1]==Sign_In_Email.val() && Nutzerliste[i][2]==Sign_In_Password.val()){
-          test=true;
-          break;
-        }
-      }
-      if(test){
-        location.href='https://www.google.com';
-        console.log("Erfolg");
-      }
-      else{
-        console.log("Fehler");
-      }
-    }
+    var Sign_In_Email=document.getElementById("Sign_In_Email");
 
 
-
-
-    //INIT
-
-    /*
-
-    */
-
-
-
-
+    var Sign_In_Password=document.getElementById("Sign_In_Password");
 
 
   </script>
