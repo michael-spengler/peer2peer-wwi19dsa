@@ -1,0 +1,10 @@
+@media (max-width: 767px){
+    .desktop{
+        visibility: hidden !important;
+    }
+}
+@media (min-width: 768px){
+    .desktop{
+        visibility: visible !important;
+    }
+}

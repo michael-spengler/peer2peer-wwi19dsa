@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="lib\css\bootstrap.css">
+    <link rel="stylesheet" href="lib\css\style.css">
+
+    <script src="lib\typescript\bootstrap.js"></script>
+    <script src="lib\typescript\jquery_v3.5.1.js"></script>
+    <script src="lib\typescript\popper_v1.5.4.js"></script>
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+            <button class="btn btn-outline-light" type="submit">Suchen</button>
+          </form>
+
+
+          <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+            <li class="nav-item h-100">
+              <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+            </li>
+
+            <li class="nav-item h-100">
+              <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+            </li>
+
+            <li class="nav-item h-100">
+              <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    
+    <div class="position-relative" style="margin-right: 80px; margin-left: 80px; margin-top: 400px;">
+        <div class="container position-absolute top-50 start-50 translate-middle shadow px-3 bg-white rounded" style="max-width: 800px;">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 desktop">
+
+                  <div class="mx-5 position-relative" style="background-color: #2EB0B9; height: calc(100% + 120px); top: -60px; transform: skew(0deg,-5deg);">
+                    <a href="index.html">
+                      <img src="media/pictures/Logo.jpg" class="img-fluid position-absolute top-50 start-50" alt="Profil" style="transform: skew(0deg,5deg) translate(-50%, -50%) !important;">
+                    </a>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <h4 class="mt-3" style="font-weight: bold;">Sign Up</h4>
+
+                    <form class="mb-3">
+                      <div class="mb-3">
+                        <label for="Sign_Up_Username" class="form-label" style="font-weight: bold;">Username</label>
+                        <input class="form-control" id="Sign_Up_Username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Sign_Up_Password" class="form-label" style="font-weight: bold;">Password</label>
+                        <input type="password" class="form-control" id="Sign_Up_Password">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Sign_Up_Password_Confirm" class="form-label" style="font-weight: bold;">Confirm Password</label>
+                        <input type="password" class="form-control" id="Sign_Up_Password_Confirm">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Sign_Up_Email" class="form-label" style="font-weight: bold;">Email Address</label>
+                        <input type="email" class="form-control" id="Sign_Up_Email">
+                      </div>
+
+                      <div class="mb-3">
+                        <input class="form-check-input me-1" type="checkbox" value="" id="Checkbox">
+                        <label class="form-check-label" for="Checkbox" style="font-size: small;">
+                          Hiermit akzeptiere ich die AGBs und DSGVO
+                        </label>
+                      </div>
+              
+                      <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn border-0 py-2" onclick="Register()" id="Sign_Up_Button" style="background-color: #2EB0B9;">Sign Up</button>
+                      </div>
+                    </form>
+
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                      <div class="me-3" style="font-weight: bold;">Already have an Account?</div>  <a href="signin.html" style="font-weight: bold; color: #2EB0B9;">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>
