@@ -9,7 +9,6 @@
 import { opine, json } from "https://deno.land/x/opine@1.1.0/mod.ts";
 import { writeJsonSync, readJsonSync} from "https://deno.land/x/jsonfile/mod.ts";
 
-var daten = readJsonSync("./Nutzerdaten.json");
 
 const app = opine();
 app.use(json()); // for parsing application/json
@@ -19,15 +18,50 @@ app.get("/", function (req, res) {
   res.sendFile(pathToHTMLOnServer);
 });
 
+
+var daten = arrayAuslesen() as Array<{}>;
+
+function arrayAuslesen(){
+    
+  //let daten: Array<{}> = new Array();
+  var tempDaten = readJsonSync("./Nutzerdaten.json");
+  console.log("Nutzerdaten vorher: ",tempDaten)
+  return tempDaten;
+}
+
+// var nutzerMail = eingabeDict.Sign_Up_Email;
+
+var schonVorhanden = false;
+
+function userAnlegen(pDaten:any, pNutzerMail: String, pDict: {}){
+
+  for (var i = 0; i < pDaten.length; i++){
+    var aktuellesDict = pDaten[i];
+
+    if(aktuellesDict.Sign_Up_Email==pNutzerMail){
+
+        console.log("Nutzer ist schon vorhanden");
+        schonVorhanden = true;
+
+    }
+  }
+  if (schonVorhanden==false){
+    daten.push(pDict);
+    writeJsonSync(
+      "./Nutzerdaten.json", daten
+    );
+  }
+  
+}
+
 app.post("/saveDataToServer", async function (req, res) {
 
-  // console.log("Ergebnis req: ", await req)
-  // console.log("Ergebnis body: ", await req.body)
-  console.log("Ergebnis body: ", req.body)
-  // console.log("Ergebnis res: ", await res)
-  // console.log("Res req: ", await res.req)
-  
-  // console.log("res ausgeben: ",res)
+  console.log("Ergebnis body: ", req.body);
+
+  var eingabeDict = req.body;
+
+  userAnlegen(daten,eingabeDict["Sign_Up_Email"],eingabeDict);
+
   res.send('fertig')
       
 });
