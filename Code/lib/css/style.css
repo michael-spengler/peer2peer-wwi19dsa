@@ -2,6 +2,11 @@
     .desktop{
         visibility: hidden !important;
     }
+    .desktopmargin{
+        margin-top: 300px !important;
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }
 }
 @media (min-width: 768px){
     .desktop{
