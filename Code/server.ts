@@ -33,8 +33,7 @@ function arrayAuslesen(){
 
 var schonVorhanden = false;
 
-function userAnlegen(pDaten: any, pNutzerMail: String, pDict: {}) {
-  var angelegt = false
+function userAnlegen(pDaten:any, pNutzerMail: String, pDict: {}){
 
   for (var i = 0; i < pDaten.length; i++){
     var aktuellesDict = pDaten[i];
@@ -51,10 +50,8 @@ function userAnlegen(pDaten: any, pNutzerMail: String, pDict: {}) {
     writeJsonSync(
       "./Nutzerdaten.json", daten
     );
-    angelegt = true;
   }
   
-  return angelegt;
 }
 
 app.post("/saveDataToServer", async function (req, res) {
@@ -62,15 +59,11 @@ app.post("/saveDataToServer", async function (req, res) {
   console.log("Ergebnis body: ", req.body);
 
   var eingabeDict = req.body;
-  var angelegt = false;
 
-  angelegt = userAnlegen(daten, eingabeDict["Sign_Up_Email"], eingabeDict);
-  
-  console.log(angelegt);
+  userAnlegen(daten,eingabeDict["Sign_Up_Email"],eingabeDict);
 
-  res.send(angelegt)
-  //^ Das müsste theoretisch etwas an die html zurücksende, wir wissen aber nicht wie das abgefangen wird
+  res.send('fertig')
+      
 });
-
 
 app.listen(3000);
