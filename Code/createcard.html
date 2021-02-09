@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="lib\css\bootstrap.css">
+
+    <script src="lib\typescript\bootstrap.js"></script>
+    <script src="lib\typescript\jquery_v3.5.1.js"></script>
+    <script src="lib\typescript\popper_v1.5.4.js"></script>
+
+    <title>Karte erstellen</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9; margin-top: 2em;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+              <button class="btn btn-outline-light" type="submit">Suchen</button>
+            </form>
+
+
+            <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+              <li class="nav-item h-100">
+                <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+              </li>
+
+              <li class="nav-item h-100">
+                <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+              </li>
+
+              <li class="nav-item h-100">
+                <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign in</a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+    <div class="row mt-5" style="margin-left: 10%; margin-right: 10%;">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-md-7">
+            <h3 style="font-weight: bold;">Karte erstellen</h3>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Ich suche
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Ich biete
+                </label>
+            </div>
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Ort</label>
+                <input type="text" class="form-control" id="formGroupExampleInput">
+            </div>
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Beschreibung</label>
+                <textarea class="form-control" rows="6" id="formGroupExampleInput2"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Spezielle Anforderungen</label>
+                <textarea class="form-control" rows="6" id="formGroupExampleInput3"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label">Fixpreis / Menge</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4">
+            </div>
+            
+            <div class="mb-3">
+                <label for="formGroupExampleInput5" class="form-label">Auftragskonfiguration</label>
+                <input type="text" class="form-control" id="formGroupExampleInput5">
+            </div>
+        </div>
+    </div>
+
+
+
+  </body>
+</html>
