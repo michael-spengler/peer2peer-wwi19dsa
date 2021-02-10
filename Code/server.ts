@@ -14,7 +14,8 @@ const app = opine();
 app.use(json()); // for parsing application/json
 
 app.get("/", function (req, res) {
-  const pathToHTMLOnServer = './login.html'
+  const pathToHTMLOnServer = `${Deno.cwd()}/login.html`
+  // const pathToHTMLOnServer = './login.html' // warum hat das iwann funktioniert = offen 
   res.sendFile(pathToHTMLOnServer);
 });
 
