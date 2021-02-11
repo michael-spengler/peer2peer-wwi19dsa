@@ -103,6 +103,30 @@
             </div>
         </div>
     </div>
-
+    <script>
+      var Sign_Up_Username=document.getElementById("Sign_Up_Username");
+  
+      
+      var Sign_Up_Email=document.getElementById("Sign_Up_Email");
+      
+      
+      var Sign_Up_Password=document.getElementById("Sign_Up_Password");
+      
+      
+      var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
+      
+      function Register() {
+        if(Sign_Up_Password!=Sign_Up_Password_Confirm){
+          console.log("Passörter stimmen nicht überein!")
+        }else{
+          fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+          { headers: {'Content-Type': 'application/json'}, 
+          method: "POST", 
+          body: JSON.stringify({ Sign_Up_Username: Sign_Up_Username.value, Sign_Up_Email: Sign_Up_Email.value, Sign_Up_Password:Sign_Up_Password.value, Sign_Up_Password_Confirm:Sign_Up_Password_Confirm.value })})
+          
+          .then(() => console.log('ready'))
+        }
+      }
+    </script>
   </body>
 </html>
