@@ -55,15 +55,50 @@ function userAnlegen(pDaten:any, pNutzerMail: String, pDict: {}){
   
 }
 
+
+function LoginPrüfen(pDaten:any, pNutzerMail: String, pNutzerPW: String){
+  var EmailKorrekt = false;
+  var PasswortKorrekt = false;
+  for (var i = 0; i < pDaten.length; i++){
+    var aktuellesDict = pDaten[i];
+    if(aktuellesDict.Sign_Up_Email==pNutzerMail){
+      EmailKorrekt = true;
+        if(aktuellesDict.Sign_Up_Password==pNutzerPW){
+          console.log("Login erfolgreich. Passwort und Email sind korrekt.")
+          PasswortKorrekt=true;
+        }
+    }
+  }
+  
+  if(EmailKorrekt==false){
+    console.log("Diese Email ist nicht registriert!");
+  }
+  if(PasswortKorrekt==false){
+    console.log("Das Passwort ist falsch!");
+  }
+}
+
 app.post("/saveDataToServer", async function (req, res) {
 
   console.log("Ergebnis body: ", req.body);
 
   var eingabeDict = req.body;
 
+  console.log("in 1. Post:",daten);
+
   userAnlegen(daten,eingabeDict["Sign_Up_Email"],eingabeDict);
 
-  res.send('fertig')
+  res.send('fertig mit Anlegen')
+      
+});
+
+app.post("/saveLoginDataToServer", async function (req, res) {
+
+  var daten2 = arrayAuslesen() as Array<{}>;
+  var eingabeDict = req.body;
+  LoginPrüfen(daten2,eingabeDict["Sign_In_Email"],eingabeDict["Sign_In_Password"]);
+
+  res.send('fertig mit Prüfen')
       
 });
 
