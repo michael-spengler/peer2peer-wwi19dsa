@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--<link rel="stylesheet" href="lib\css\bootstrap.css">-->
+
+    <!--<script src="lib\typescript\bootstrap.js"></script>
+    <script src="lib\typescript\jquery_v3.5.1.js"></script>
+    <script src="lib\typescript\popper_v2.5.4.js"></script>-->
+
+    <title>Login</title>
+
+    
+  </head>
+  <body style="padding:5%;">
+
+    <div class="container-fluid m-5">
+
+      <h3>Sign Up</h3>
+
+      <form id="signUpForm" action="userSignUp" method="post">
+        <div class="mb-3">
+          <label for="Sign_Up_Username" class="form-label">Username</label>
+          <input class="form-control" id="Sign_Up_Username">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password_Confirm" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="Sign_Up_Password_Confirm">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_Up_Email">
+        </div>
+
+        <a type="link" class="btn btn-primary" onclick="registrieren()" id="Sign_Up_Button">Sign Up</a>
+
+      </form>
+
+    </div>
+    
+    <div class="container-fluid m-5">
+
+      <h3>Sign In</h3>
+
+
+        <div class="mb-3">
+          <label for="Sign_Up_Email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="Sign_In_Email">
+        </div>
+        <div class="mb-3">
+          <label for="Sign_Up_Password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="Sign_In_Password">
+        </div>
+
+        <a type="submit" class="btn btn-primary" onclick="login()" id="Sign_In_Button">Sign In</a>
+
+
+    </div>
+
+    <script>
+    
+      // Anmerkung für Data_Dev: Es wird zurzeit davon ausgegangen, dass ausschließlich korrekte Daten eingegeben werden, also beim Testen darauf achten, denn es wird noch nicht kontrolliert.
+      //                          Wenn die Daten in der Liste vorhanden sind und man eingeloggt wird, erfolgt eine Weiterleitung nach Google, wenn nicht, passiert nichts Frontend-technisches.
+      // Bei etwaigen Vergleichen wird der entsprechende Eintrag der Liste mit dem zu erfüllenden Wert verglichen
+  
+      // Nutzerliste, in der alle Benutzer als Array gspeichert werden.
+  
+      var Nutzerliste = [];
+  
+  
+      // Variablen Sign Up (Register)
+  
+  
+      var Sign_Up_Username=document.getElementById("Sign_Up_Username");
+  
+  
+      var Sign_Up_Email=document.getElementById("Sign_Up_Email");
+      
+      
+      var Sign_Up_Password=document.getElementById("Sign_Up_Password");
+      
+      
+      var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
+
+      
+      var Sign_In_Email=document.getElementById("Sign_In_Email");
+
+      var Sign_In_Password=document.getElementById("Sign_In_Password");
+      
+      function registrieren() {
+        if(Sign_Up_Password!=Sign_Up_Password_Confirm){
+          console.log("Passörter stimmen nicht überein!")
+        }else{
+          fetch('http://localhost:3000/saveDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+          { headers: {'Content-Type': 'application/json'}, 
+          method: "POST", 
+          body: JSON.stringify({ Sign_Up_Username: Sign_Up_Username.value, Sign_Up_Email: Sign_Up_Email.value, Sign_Up_Password:Sign_Up_Password.value, Sign_Up_Password_Confirm:Sign_Up_Password_Confirm.value })})
+          
+          .then(() => console.log('ready'))
+        }
+      }
+      
+      
+      function login() {
+        fetch('http://localhost:3000/saveloginDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+        { headers: {'Content-Type': 'application/json'}, 
+        method: "POST", 
+        body: JSON.stringify({ Sign_In_Email: Sign_In_Email.value, Sign_In_Password:Sign_In_Password.value })})
+          .then(() => console.log('ready'))
+      }
+      // Variablen für Sign_In
+  
+ 
+  
+    </script>
+
+  </body>
+  
+  
+
+</html>
