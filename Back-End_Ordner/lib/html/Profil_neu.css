@@ -1,0 +1,86 @@
+.profil_atrib{
+    margin-left: 6vmin;
+    width: 80%;
+    height: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.2vmin;
+}
+#profil_img{
+    position: relative;
+    margin-left: 31%;
+}
+#profil_name{
+    position: relative;
+    text-align: center;
+    font-size: 2.5vmin;
+    font-weight: bold;
+}
+#button{
+    position: relative;
+    margin-left: 22%;
+    background-color: #2EB0B9;
+    width: 22vmin;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 20px;
+    border-width: 0.22vmin;
+    border-color: black;
+}
+.cards1{
+    position: absolute;
+    margin-left: 27.5%;
+}
+.cards2{
+    position: absolute;
+    margin-left: 27.5%;
+    margin-top: 30%;
+}
+.bewertung{
+    position: relative;
+    margin-left: 10%;
+}
+#bewertung_text{
+    margin-left: 10%;
+    font-size: 2.2vmin;
+}
+#bewertung-title{
+    margin-top: 35vh;
+    margin-left: 22%;
+}
+.bewertungen{
+    margin-left: 22%;
+}
+#bewertung{
+    width: 15vw;
+    height: 25vh;
+    border-color: transparent;
+}
+.standort{
+    position: relative;
+    margin-left: 10%;
+}
+#standort_text{
+    margin-left: 10%;
+    font-size: 2.2vmin;
+}
+.beschreibung{
+    position: relative;
+    margin-left: 10%;
+}
+::placeholder {
+    color: black;
+}
+
+#card-container {
+   
+  margin: auto;
+  width: 90%;
+  
+}
+
+#buttonMerken {
+    border-radius: 14px;
+    background-color: #2EB0B9;
+}
+
