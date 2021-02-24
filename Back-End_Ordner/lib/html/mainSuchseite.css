@@ -1,0 +1,54 @@
+#impressum {
+    background-color: #2EB0B9;
+    color: white;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    border: none;
+    
+}
+
+#button-impressum {
+    color: white;
+    background-color: #2EB0B9 ;
+    border: none;
+    width: 30%;
+    height: 16%;
+    font-size: 12px;
+    
+    
+}
+
+.btn-secondary {
+    background-color: lightgray;
+    color: black;
+    border: solid 1px;
+    border-radius: 25px;
+}
+
+#card-container {
+   
+    margin: auto;
+  width: 100%;
+  
+
+  
+}
+
+#buttonEntfernen {
+    border-radius: 14px;
+    background-color: #2EB0B9;
+
+
+
+}
+
+#checkbox {
+    margin-left: 6px;
+}
+
+#checkboxLabel {
+
+    margin-left: 6px;
+
+}
