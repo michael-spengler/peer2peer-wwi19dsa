@@ -6,76 +6,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
        
-        <div class="container-fluid" style="margin-top: 2em; padding-left: 0; padding-right: 0;">
-          <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #2EB0B9;">
-            <div class="container-fluid px-5">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex align-items-center">
-                  <li class="nav-item h-100">
-                    <button type="button" class="btn nav-link" style="color: rgba(255, 255, 255, 0.55);" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Erkunden
-                    </button>
-        
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content" style="background-color: rgba(255, 255, 255, 0.7); border-color: rgba(255, 255, 255, 0.7);">
-                          <div class="modal-header text-center">
-                            <h5 class="modal-title w-100" id="exampleModalLabel">Was möchten Sie machen?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body text-center">
-                            <div class="row gx-5">
-                              <div class="col-sm">
-                                <a href="#" role="button" class="btn btn-primary border-0" style="width: 100px; background-color: #2EB0B9;">Angebot</a>
-                              </div>
-                              <div class="col-sm">
-                                <a href="#" role="button" class="btn btn-primary border-0" style="width: 100px; background-color: #2EB0B9;">Suche</a>
-                              </div>
-                            </div>
-        
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="nav-item dropdown h-100">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Deutsch
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Englisch</a></li>
-                    </ul>
-                  </li>
-        
-                  <li class="nav-item h-100">
-                    <a class="nav-link" style="min-width: 65px;" href="#">Sign In</a>
-                  </li>
-                  <li class="nav-item h-100">
-                    <a class="nav-link" href="#">Kategorien</a>
-                  </li>
-                </ul>
-        
-              </div>
-        
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="container-fluid">
-                  <form class="d-inline-flex flex-grow-1">
-                    <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 10em;">
-                    <button class="btn btn-outline-light" type="submit">Suchen</button>
-                  </form>
-                </div>
-              </div>
-        
-        
-              <a class="navbar-brand" href="#">Peer-2-Peer</a>
-        
-            </div>
-          </nav>
-        </div>
                 
    
    
@@ -85,7 +15,40 @@
    
     <body >
        
-        <br><br><br>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="../../media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+  
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+              <button class="btn btn-outline-light" type="submit">Suchen</button>
+            </form>
+  
+  
+            <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+              <li class="nav-item h-100">
+                <a class="nav-link" href="p2pSuche.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+              </li>
+  
+              <li class="nav-item h-100">
+                <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+              </li>
+  
+              <li class="nav-item h-100">
+                <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+              </li>
+  
+            </ul>
+  
+          </div>
+        </div>
+      </nav>
         
         <div class="container-fluid">
             <div class="row">
