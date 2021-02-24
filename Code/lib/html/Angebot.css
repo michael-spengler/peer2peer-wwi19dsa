@@ -1,0 +1,161 @@
+.title{
+    background-color: rgb(67, 233, 116);
+    font-size: 2vmax;
+}
+.title-img{
+    background: no-repeat url("images/1.Angebot-Bild.png");
+    height: 500px;
+    width: 700px;
+    background-position: center;
+}
+
+#main{
+    position: static;
+}
+.sicht{
+    width: 35vw;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+.angabe1{
+    position: relative;
+    margin-left: 1vw;
+    font-size: 3vmin;
+    font-weight: bold;
+}
+.angabe2{
+    font-size: 3vmin;
+    font-weight: bold;
+}
+#button{
+    position: relative;
+    margin-left: 28%;
+    background-color: rgb(67, 233, 116);
+    width: 30vmin;
+    font-weight: bold;
+    align-self: center;
+    border-color: transparent;
+    border-radius: 20px;
+}
+.thema{
+    font-weight: 400;
+    font-size: 15px;
+}
+.angebot{
+    margin-left: 1%;
+}
+.angebot-title{
+    font-size: 25px;
+}
+.preise{
+    font-size: 20px;
+    color: red;
+}
+.knoepfe{
+    padding-right: 180px;
+}
+
+#slide-container {
+    overflow: auto;
+   white-space: nowrap;
+}
+
+#slidecontainer1 {
+    width: 48%;
+    margin-left: 0%;
+}
+#slideshow-pic {
+    width: 25%;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    margin-right: 30px;
+}
+
+#slide-container-small {
+
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-color: transparent;
+}
+
+#small-slideshow-pic {
+
+width: 20%;
+margin-left: 50px;
+margin-top: 20px;
+margin-bottom: 35px;
+margin-right: 30px;
+}
+#konfig{
+    border-style: solid;
+    border-width: 0.4vmin;
+    border-color: lightgray;
+    width: 60%;
+    font-size: 2.5vmin;
+    margin: 1vmin;
+}
+#konfig-title2{
+    position: relative;
+    margin-left: 2vw;
+    font-size: 2.5vmin;
+    font-weight: bold;
+}
+#konfig-zahl{
+    position: relative;
+    margin-left: 2vw;
+}
+#zusatz1{
+    position: relative;
+    margin-left: 2vw; 
+}
+#zusatz2{
+    position: relative;
+    margin-left: 2vw; 
+}
+#zusatz3{
+    position: relative;
+    margin-left: 2vw; 
+}
+#sende-button{
+    position: relative;
+    margin-left: 65%;
+    background-color: rgb(67, 233, 116);
+    width: 15vw;
+    font-weight: bold;
+    border-color: transparent;
+    border-radius: 10px;
+}
+.bewertung{
+    position: relative;
+    margin-left: 10%;
+}
+#bewertung_text{
+    margin-left: 10%;
+    font-size: 2.2vmin;
+}
+#bewertung-title{
+    margin-top: 20vh;
+}
+.bewertungen{
+    margin-left: 22%;
+}
+#bewertung{
+    width: 15vw;
+    height: 25vh;
+    border-color: transparent;
+}
+ 
+#cards {
+    margin-left: 15%;
+}
+#card-container {
+   
+    margin: auto;
+    width: 80%;
+    
+}
+#buttonMerken {
+    border-radius: 14px;
+    background-color: #2EB0B9;
+}
