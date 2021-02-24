@@ -85,14 +85,14 @@
                       </div>
 
                       <div class="mb-3">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="Checkbox">
+                        <input class="form-check-input me-1" type="checkbox" value="" id="Sign_Up_Checkbox">
                         <label class="form-check-label" for="Checkbox" style="font-size: small;">
                           Hiermit akzeptiere ich die AGBs und DSGVO
                         </label>
                       </div>
               
                       <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn border-0 py-2" onclick="Register()" id="Sign_Up_Button" style="background-color: #2EB0B9;">Sign Up</button>
+                        <button type="submit" class="btn btn-primary btn border-0 py-2 disabled" onclick="Register()" id="Sign_Up_Button" style="background-color: #2EB0B9;">Sign Up</button>
                       </div>
                     </form>
 
@@ -105,16 +105,45 @@
     </div>
     <script>
       var Sign_Up_Username=document.getElementById("Sign_Up_Username");
-  
       
       var Sign_Up_Email=document.getElementById("Sign_Up_Email");
       
-      
       var Sign_Up_Password=document.getElementById("Sign_Up_Password");
-      
       
       var Sign_Up_Password_Confirm=document.getElementById("Sign_Up_Password_Confirm");
       
+      var Sign_Up_Button = document.getElementById("Sign_Up_Button");
+
+      var Sign_Up_Checkbox = document.getElementById("Sign_Up_Checkbox");
+
+
+      var Username = $("#Sign_Up_Username");
+      var Email = $("#Sign_Up_Email");
+      var Password = $("#Sign_Up_Password");
+      var Password_Confirm = $("#Sign_Up_Password_confirmed");
+      var Checkbox = $("#Sign_Up_Checkbox");
+      var Button = $("#Sign_Up_Button");
+
+      Username.on("keyup",check());
+
+      Email.on("keyup",check());
+
+      Password.on("keyup",check());
+
+      Password_Confirm.on("keyup",check());
+
+      Checkbox.on("click",check());
+
+      function check(){
+        console.log("Test");
+        if(Username.val() && Email.val() && Password.val() && Password_Confirm.val()){
+          Button.removeClass("disabled");
+        }
+        else{
+          Button.addClass("disabled");
+        }
+      }
+
       function Register() {
         if(Sign_Up_Password!=Sign_Up_Password_Confirm){
           console.log("Passwörter stimmen nicht überein!")
