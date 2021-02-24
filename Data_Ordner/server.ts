@@ -14,7 +14,7 @@ const app = opine();
 app.use(json()); // for parsing application/json
 
 app.get("/", function (req, res) {
-  const pathToHTMLOnServer = `${Deno.cwd()}/login.html`
+  const pathToHTMLOnServer = `${Deno.cwd()}\\login.html`
   // const pathToHTMLOnServer = './login.html' // warum hat das iwann funktioniert = offen 
   res.sendFile(pathToHTMLOnServer);
 });
@@ -83,8 +83,6 @@ app.post("/saveDataToServer", async function (req, res) {
   console.log("Ergebnis body: ", req.body);
 
   var eingabeDict = req.body;
-
-  console.log("in 1. Post:",daten);
 
   userAnlegen(daten,eingabeDict["Sign_Up_Email"],eingabeDict);
 
