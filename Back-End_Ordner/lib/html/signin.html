@@ -10,6 +10,7 @@
     <script src="../javascript/bootstrap.bundle.js"></script>
     <script src="../javascript/jquery_v3.5.1.js"></script>
     <script src="../javascript/popper_v1.5.4.js"></script>
+    <script src="../javascript/navbar.js"></script>
 
     <title>Sign In</title>
   </head>
@@ -40,8 +41,17 @@
               <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
             </li>
 
-            <li class="nav-item h-100">
+            <li class="nav-item h-100" id="Sign_In">
               <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+            </li>
+
+            <li class="nav-item h-100" id="Profile" style="display: none;">
+              <a class="nav-link" href="Profil_neu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              </a>
             </li>
 
           </ul>
@@ -69,11 +79,11 @@
                   <form>
             
                     <div class="mb-3">
-                      <label for="Sign_Up_Email" class="form-label" style="font-weight: bold;">Email Address</label>
+                      <label for="Sign_In_Email" class="form-label" style="font-weight: bold;">Email Address</label>
                       <input type="email" class="form-control" id="Sign_In_Email">
                     </div>
                     <div class="mb-3">
-                      <label for="Sign_Up_Password" class="form-label" style="font-weight: bold;">Password</label>
+                      <label for="Sign_In_Password" class="form-label" style="font-weight: bold;">Password</label>
                       <input type="password" class="form-control" id="Sign_In_Password">
                       <a href="index.html" style="font-weight: bold; color: #2EB0B9;">Forgot Password?</a>
                     </div>
@@ -101,4 +111,22 @@
     </div>
 
   </body>
+
+  <script>
+    var Sign_In_Email=document.getElementById("Sign_In_Email");
+
+    var Sign_In_Password=document.getElementById("Sign_In_Password");
+
+    function Login() {
+
+      sessionStorage.setItem('is_logged_in', true);
+      
+        fetch('http://localhost:3000/saveloginDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
+        { headers: {'Content-Type': 'application/json'}, 
+        method: "POST", 
+        body: JSON.stringify({ Sign_In_Email: Sign_In_Email.value, Sign_In_Password:Sign_In_Password.value })})
+          .then(() => console.log('ready'))
+      }
+  </script>
+
 </html>

@@ -4,58 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="lib\css\bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
-    <script src="lib\typescript\bootstrap.js"></script>
-    <script src="lib\typescript\jquery_v3.5.1.js"></script>
-    <script src="lib\typescript\popper_v1.5.4.js"></script>
+    <script src="../javascript/bootstrap.bundle.js"></script>
+    <script src="../javascript/jquery_v3.5.1.js"></script>
+    <script src="../javascript/popper_v1.5.4.js"></script>
+    <script src="../javascript/navbar.js"></script>
 
     <title>Karte erstellen</title>
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9; margin-top: 2em;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../../media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
 
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
-              <button class="btn btn-outline-light" type="submit">Suchen</button>
-            </form>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+            <button class="btn btn-outline-light" type="submit">Suchen</button>
+          </form>
 
 
-            <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
-              <li class="nav-item h-100">
-                <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
-              </li>
+          <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+            <li class="nav-item h-100">
+              <a class="nav-link" href="p2pSuche.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+            </li>
 
-              <li class="nav-item h-100">
-                <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
-              </li>
+            <li class="nav-item h-100">
+              <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+            </li>
 
-              <li class="nav-item h-100">
-                <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign in</a>
-              </li>
+            <li class="nav-item h-100" id="Sign_In">
+              <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+            </li>
 
-            </ul>
+            <li class="nav-item h-100" id="Profile" style="display: none;">
+              <a class="nav-link" href="Profil_neu.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              </a>
+            </li>
 
-          </div>
+          </ul>
+
         </div>
-      </nav>
+      </div>
+    </nav>
 
-    <div class="row mt-5" style="margin-left: 10%; margin-right: 10%;">
-        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-top: 8em;">
-          <div class="card" style="width: 18rem;" id="Card">
+    <div class="row mt-5 gx-5" style="margin-left: 10%; margin-right: 10%;">
+        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-top: 2em;">
+          <div class="card"  id="Card">
             <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;">
               <b>Ich biete</b>
             </div>
-            <img class="card-img-top" src="media/pictures/Auto.png"  >
+            <img class="card-img-top" src="../../media/pictures/Auto.png"  >
             <div class="card-body">
 
               <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
@@ -82,6 +92,12 @@
               <hr style="border: solid 1px;width: 100%;">
             </div>
           </div>
+          <div class="d-grid gap-2 mt-3 mx-5">
+            <button class="btn btn-primary btn border-0 py-2" onclick="aktualisieren()" id="Refresh" style="background-color: #2EB0B9;">Aktualisieren</button>
+          </div>
+          <div class="d-grid gap-2 mt-3 mx-5">
+            <button class="btn btn-primary btn border-0 py-2" onclick="submit()" id="Submit" style="background-color: #2EB0B9;">Bestätigen</button>
+          </div>
         </div>
 
 
@@ -107,7 +123,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Ort</label>
+                <label for="formGroupExampleInput" class="form-label">Überschrift</label>
                 <input type="text" class="form-control" id="formGroupExampleInput">
             </div>
 
