@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/impressum.css">
 
     <script src="../javascript/bootstrap.bundle.js"></script>
     <script src="../javascript/jquery_v3.5.1.js"></script>
@@ -12,12 +13,15 @@
     <script src="../javascript/navbar.js"></script>
 
     <title>Karte erstellen</title>
+
+
+
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9; margin-top: 2em;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
           <img src="../../media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +31,7 @@
 
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
-            <button class="btn btn-outline-light" type="submit">Suchen</button>
+            <a href="mainSuchseite.html" class="btn btn-outline-light" type="submit">Suchen</a>
           </form>
 
 
@@ -62,16 +66,15 @@
     <div class="row mt-5 gx-5" style="margin-left: 10%; margin-right: 10%;">
         <div class="col-lg-5 col-md-6 col-sm-12" style="margin-top: 2em;">
           <div class="card"  id="Card">
-            <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;">
-              <b>Ich biete</b>
+            <div class="card-header text-center" id="Wahl" style="background-color: #2EB0B9; font-size: 18px;">
+              <b id="Wahl2">Ich suche</b>
             </div>
             <img class="card-img-top" src="../../media/pictures/Auto.png"  >
             <div class="card-body">
 
-              <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
             
-              <label for="iconMerkliste">
-                <b>Banane_123</b> 
+              <label>
+                <b>Username</b> 
                 <small style="font-size: 10px;">
                   <small style="color: gold;">4,8
                   </small>
@@ -80,12 +83,10 @@
               </label>
                       
               <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
-                  <p style><b>Autoreperatur</b></p>
+                  <p id="Heading"><b>Überschrift</b></p>
                   
-                  <p class="pb-3">
-                    Ich repariere ihr Auto abla blab
-                    fewg sdggo9jgf godjfkgerg
-                    gogjergh sdgojerg
+                  <p class="pb-3" id="Text">
+                    Hier steht Ihre Beschreibung.
                   </p>
               </div>
 
@@ -151,5 +152,27 @@
 
 
 
+
   </body>
+
+  <script>
+    var Radio2 = $("#flexRadioDefault2");
+    var Wahl = $("#Wahl");
+    var Wahl2 = $("#Wahl2");
+  
+    function aktualisieren(){
+      if(Radio2.checked){
+        Wahl.css("backgroundcolor", "#2EB0B9");
+        Wahl2.html("Ich suche");
+        console.log("1");
+      }
+      else{
+        Wahl.css("backgroundcolor", "rgb(136, 232, 171)");
+        Wahl2.html("Ich biete");
+        console.log("2");
+      }
+    }
+
+  </script>
+
 </html>
