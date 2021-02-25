@@ -1,178 +1,161 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="createCard.css">
+       <script src="createCard.js"></script>
 
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/impressum.css">
+       <div class="container-fluid" style="margin-top: 0px; padding-left: 0; padding-right: 0;">
 
-    <script src="../javascript/bootstrap.bundle.js"></script>
-    <script src="../javascript/jquery_v3.5.1.js"></script>
-    <script src="../javascript/popper_v1.5.4.js"></script>
-    <script src="../javascript/navbar.js"></script>
-
-    <title>Karte erstellen</title>
-
-
-
-  </head>
-  <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9; margin-top: 2em;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="../../media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
-
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
-            <a href="mainSuchseite.html" class="btn btn-outline-light" type="submit">Suchen</a>
-          </form>
-
-
-          <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
-            <li class="nav-item h-100">
-              <a class="nav-link" href="p2pSuche.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
-            </li>
-
-            <li class="nav-item h-100">
-              <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
-            </li>
-
-            <li class="nav-item h-100" id="Sign_In">
-              <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
-            </li>
-
-            <li class="nav-item h-100" id="Profile" style="display: none;">
-              <a class="nav-link" href="Profil_neu.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <img src="media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
               </a>
-            </li>
-
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <div class="row mt-5 gx-5" style="margin-left: 10%; margin-right: 10%;">
-        <div class="col-lg-5 col-md-6 col-sm-12" style="margin-top: 2em;">
-          <div class="card" id="Card" style="max-width: 400px;">
-            <div class="card-header text-center" id="Wahl" style="background-color: #2EB0B9; font-size: 18px;">
-              <b id="Wahl2">Ich suche</b>
-            </div>
-            <img class="card-img-top" src="../../media/pictures/Auto.png" >
-            <div class="card-body">
-
-            
-              <label>
-                <b>Username</b> 
-                <small style="font-size: 10px;">
-                  <small style="color: gold;">4,8
-                  </small>
-                  (aus 5 Bewertungen)
-                </small>
-              </label>
-                      
-              <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
-                  <p id="Heading"><b>Überschrift</b></p>
-                  
-                  <p class="pb-3" id="Text">
-                    Hier steht Ihre Beschreibung.
-                  </p>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-contrkarteols="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+                  <button class="btn btn-outline-light" type="submit">Suchen</button>
+                </form>
+                <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+                  <li class="nav-item h-100">
+                    <a class="nav-link" href="#" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+                  </li>
+                  <li class="nav-item h-100">
+                    <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+                  </li>
+                  <li class="nav-item h-100">
+                    <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+                  </li>
+                </ul>
               </div>
-
-              <hr style="border: solid 1px;width: 100%;">
             </div>
-          </div>
-          <div class="d-grid gap-2 mt-3 mx-5">
-            <button class="btn btn-primary btn border-0 py-2" onclick="aktualisieren()" id="Refresh" style="background-color: #2EB0B9;">Aktualisieren</button>
-          </div>
-          <div class="d-grid gap-2 mt-3 mx-5">
-            <button class="btn btn-primary btn border-0 py-2" onclick="submit()" id="Submit" style="background-color: #2EB0B9;">Bestätigen</button>
-          </div>
-        </div>
+          </nav>
+</div>
+    </head>
 
-
-
-
-
-
+    <body>
         
-        <div class="col-lg-7 col-md-6">
-            <h3 style="font-weight: bold;">Karte erstellen</h3>
+        <div class="container-fluid" style="width: 50%;float: left;margin-top: 200px;">
+            <div class="row">
+                <div class="col-md-12">
 
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Ich suche
-                </label>
+                    <div class="card" style="width: 20rem;margin-left: 35px;" id="Card">
+                        <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;"><b>Ich biete</b></div>
+                        <img class="card-img-top" src="pics/Auto.png"  >
+                        <div class="card-body">
+                    
+                             
+    
+                          <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
+                         
+                          <label for="iconMerkliste"><b>Banane_123</b> <br> <small style="font-size: 10px;"><small style="color: gold;font-size: 10px;">4,8</small> (aus 5 Bewertungen)</small></label>
+                          
+                    
+                        
+                         
+                                   
+                        <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
+                            <p style><b>Autoreperatur</b></p>
+                            
+                            <p>Ich repariere ihr Auto abla blab
+                                fewg sdggo9jgf godjfkgerg
+                                gogjergh sdgojerg </p>
+                                <br>
+                        </div>
+                    
+    
+                        
+                        <hr style="border: solid 1px;width: 100%;">
+                            <div class="row">
+                        <div class="container">
+                            
+                            <div class="row">
+                                <div class="col" >
+                                    <button type="button" onclick="myFunction();" id="buttonMerken"><b>Merken</b></button>
+                                </div>
+                                
+                                <div class="col-md-offset-*">
+                                    <p id="preis"><b>ab 1800 &#8364;</b></p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Ich biete
-                </label>
+                    </div>
+
+                    <button id="buttonKarteErstellen" onclick="createCard();"><b>Karte erstellen</b></button>
+                
+                </div>
             </div>
 
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Überschrift</label>
-                <input type="text" class="form-control" id="formGroupExampleInput">
-            </div>
-
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Beschreibung</label>
-                <textarea class="form-control" rows="6" id="formGroupExampleInput2"></textarea>
-            </div>
-
-            <div class="mb-3">
-                <label for="formGroupExampleInput3" class="form-label">Spezielle Anforderungen</label>
-                <textarea class="form-control" rows="6" id="formGroupExampleInput3"></textarea>
-            </div>
-
-            <div class="mb-3">
-                <label for="formGroupExampleInput4" class="form-label">Fixpreis / Menge</label>
-                <input type="text" class="form-control" id="formGroupExampleInput4">
-            </div>
-            
-            <div class="mb-3">
-                <label for="formGroupExampleInput5" class="form-label">Auftragskonfiguration</label>
-                <input type="text" class="form-control" id="formGroupExampleInput5">
-            </div>
         </div>
-    </div>
 
-
-
-
-  </body>
-
-  <script>
-    var Radio2 = $("#flexRadioDefault2");
-    var Wahl = $("#Wahl");
-    var Wahl2 = $("#Wahl2");
+        <div class="container-fluid" style="width: 50%;float: right;margin-top: 60px;">
+            <div class="row">
+              <div class="col-md-12">
+                <h2><b>Karte Erstellen</b></h2>
+                
   
-    function aktualisieren(){
-      if(Radio2.checked){
-        Wahl.css("backgroundcolor", "#2EB0B9");
-        Wahl2.html("Ich suche");
-        console.log("1");
-      }
-      else{
-        Wahl.css("backgroundcolor", "rgb(136, 232, 171)");
-        Wahl2.html("Ich biete");
-        console.log("2");
-      }
-    }
+  
+              </div>
+            </div>
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <input type="checkbox" id="checkboxSuche">
+                <label for="checkboxSuche">  <b>  Ich Suche</b></label>
+                <br>
+                <input type="checkbox" id="checkboxBiete">
+                <label for="checkboxSuche">  <b>  Ich biete</b></label>
+                </div>
+            </div>
 
-  </script>
+            <div class="row" style="margin-top: 40px;">
+                <div class="col">
+                    <label for="inputOrt" style="display: block;"><b>Ort</b></label>
+                <input type="text" id="inputOrt" style="width: 80%;background-color: lightgray;border: solid gray 1px;" placeholder="enter location">
+            </div>
+            </div>
 
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                <label for="inputBeschreibung" style="display: block;"><b>Beschreibung</b></label>
+                <textarea  id="inputBeschreibung" style="width: 80%;height: 200px;background-color: lightgray;border: solid gray 1px;resize: none;" placeholder="enter discription"></textarea>
+           </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                <label for="inputBeschreibung" style="display: block;"><b>Spezielle Anforderungen</b></label>
+                <textarea  id="inputBeschreibung" style="width: 80%;height: 200px;background-color: lightgray;border: solid gray 1px;resize: none;" placeholder="enter special requirements"></textarea>
+            
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="inputPreis" style="display: block;"><b>Preis</b></label>
+                    <input type="text" id="inputPreis" style="width: 80%;background-color: lightgray;border: solid gray 1px;" placeholder="enter price">
+            
+                </div>
+            </div>
+
+  
+          </div>
+
+          
+
+         
+
+    
+     
+        
+    </body>
 </html>
