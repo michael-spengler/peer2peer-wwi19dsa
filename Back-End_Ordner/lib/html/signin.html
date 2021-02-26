@@ -120,6 +120,7 @@
     function Login() {
 
       sessionStorage.setItem('is_logged_in', true);
+
       
         fetch('http://localhost:3000/saveloginDataToServer',     //Schicken der Daten an Endpoint saveDataToServer
         { headers: {'Content-Type': 'application/json'}, 
