@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+    <title>Suche</title>
+
+   
+    <!-- <link href="Angebote.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="impressum.css">
+    <link rel="stylesheet" href="slideshow.css">
+    <link rel="stylesheet" href="Suche.css">
+    
+      
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+       
+
+  </head>
+
+  <body style="margin-left: 3em; margin-right: 3em; margin-bottom: 1em; margin-top: 1em">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2EB0B9; margin-top: 2em;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="../../media/pictures/Logo.jpg" class="px-5" alt="" style="height: 50px; padding: 0;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse h-100" id="navbarSupportedContent">
+
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search" style="min-width: 15em;">
+            <a href="mainSuchseite.html" class="btn btn-outline-light" type="submit">Suchen</a>
+          </form>
+
+
+          <ul class="navbar-nav nav-fill w-100 me-auto mb-2 mb-lg-0">
+            <li class="nav-item h-100">
+              <a class="nav-link" href="p2pSuche.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Erkunden</a>
+            </li>
+
+            <li class="nav-item h-100">
+              <a class="nav-link" href="p2pKategorien.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Kategorien</a>
+            </li>
+
+            <li class="nav-item h-100" id="Sign_In">
+              <a class="nav-link" href="signin.html" style="padding-top: 0; padding-bottom: 0; height: 50px; line-height: 50px; color: white;">Sign In</a>
+            </li>
+            <li class="nav-item h-100" id="Profile" style="display: none;">
+                <a class="nav-link" href="Profil_neu.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>
+                </a>
+              </li>
+  
+            </ul>
+  
+          </div>
+        </div>
+      </nav>
+        
+      
+        <div class="container-fluid title mt-5"> Babysitter </div>
+        
+        
+        
+            
+            <div class="container-fluid" style="float: right;width: 50%;">
+
+                <div class="row">
+            
+            <div class="img-div ml-5 mt-5 col-md-6 col-sm-10 col-xs-12">
+               <img class="title-img mt-5" src="pics/Wohnen.png" style="width: 500px;height: 400px;" >
+            </div>
+
+        
+
+
+        </div>
+        
+        <div class="row slide/button mt-5">
+            <div class="container-fluid ml-3">
+                <div class="container-fluid" id="slidecontainer1">
+    
+                    <div class="slide-container" id="slide-container-small" style="width: 500px;">
+               
+                        <img src="pics/fassaden-malerei.png" id="small-slideshow-pic"  >
+                        
+                    
+                    
+                              
+                        
+                        <img  src="pics/dachboden.png" id="small-slideshow-pic">
+                        
+                
+                   
+                      
+                        <img  src="pics/winter-garten.png" id="small-slideshow-pic">
+
+                        <img  src="pics/winter-garten.png" id="small-slideshow-pic">
+            
+                    
+
+                    
+                    </div>
+                </div>
+            </div>
+              
+              
+         </div>
+            </div>
+  
+  
+        <div class="container-fluid" style="float: left;width: 50%;">
+            <form class="angebot mt-5 col-md-4 col-sm-10 col-xs-12" id="main" >
+                
+                
+  
+                <img src="pics/iconMerkliste.png" width="55%" id="iconMerkliste">
+                         
+                <label for="iconMerkliste"><b>Gurke_678</b> <br> <small style="font-size: 10px;"><small style="color: gold;font-size: 10px;">4,8</small>(aus 5 Bewertungen)</small></label>
+               
+                <div class="sicht mt-4">
+                    <div class="row mt-3 ml-2">
+                        <div class="angaben col-md-8 col-sm-10 col-xs-10">
+                            <div class="angabe1 mt-3">Fixpreis</div>
+                        </div>
+                        <div class="angaben col-md-3 col-sm-3 col-xs-3">
+                          <div class="angabe2 mt-3">50€/Terasse</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                      <button class="btn btn-outline btn-lg  mt-5 mb-3" id="button">Anfrage senden</button>
+                    </div>
+                    <div class="row">
+                          <button class="btn btn-outline mb-3 btn-lg" id="button">Kontakt</button>
+                    </div>
+                    <div class="row">
+                          <button class="btn btn-outline btn-lg mb-3" id="button">Merken</button>
+                    </div>
+                 </div>
+                
+            </form>
+  
+      
+        
+        
+
+        </div>
+
+    
+         
+
+         
+            
+        <div class="container-fluid" style="margin-top: 300px;">
+        
+          
+          <h4 class="mt-5" id="beschreibung-title">Beschreibung</h4>
+            <p class="col-md-8 col-sm-10 col-xs-10 mt-3" id="beschreibung">
+                Ich suche jemanden der vom 10.11.2021 - 12.11.2021 mein Kinde von 10:00-12:00 Uhr Babysitten kann. 
+
+                Es ist sehr leicht mit dem Kind umzugehen.
+                Genaueres zu dem Kind nach der Kontaktaufnahme
+
+
+            </p>
+          
+          <h4 class="mt-5" id="anforderung-title">Spezielle Anforderungen</h4>
+            <p class="col-md-8 col-sm-10 col-xs-10 mt-3" id="anforderung">
+                Es wäre mit am liebsten, wenn Sie aus der Umgebung kommen und optimalerweise kein Menschenhändler sind. 
+                Aus Sicherheitsgründen mache ich mit Ihrer Einwilligung eine Passkopie.
+
+                Natürlich sollten Sie auch gut mit Babys umgehen können. 
+
+
+                  
+                </p>
+
+            </div>
+      
+                
+                       
+                  
+                  
+                  <h4 class="mt-5" id="bewertung-title">Bewertungen meines Profils</h4>
+                  
+                  <div class="row bewertungen">
+                      
+                    <div class="col-md-3 col-sm-6 col-xs-8">
+                       <div class="card ml-5 mt-1 mb-3" id="bewertung">
+                                            <div class="card-body">
+                                                <div class="card-title">Anonymer User</div>
+                                                <div class="stars">
+                                                    <span class="star">&#9733</span>
+                                                    <span class="star">&#9733</span>
+                                                    <span class="star">&#9733</span>
+                                                    <span class="star">&#9733</span>
+                                                    <span class="star">&#9734</span>
+                                               </div>
+            
+                                               <p class="card-text mt-2">
+                                                Super Service. <br>
+                                                Tolles Ergebnbis.
+                                            </p>
+        
+                                        </div>
+                   </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 col-xs-8">
+                  <div class="card ml-5 mt-1 mb-3" id="bewertung">
+                                        <div class="card-body">
+                                            <div class="card-title">Ursula Abendmond</div>
+                                            <div class="stars">
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9734</span>
+                                           </div>
+                                            <p class="card-text mt-2">
+                                                Sehr netter Mann. Hat toll gearbeiet
+                                            </p>
+        
+                                        </div>
+                   </div>
+                </div>
+                  
+                <div class="col-md-3 col-sm-6 col-xs-8">
+                  <div class="card ml-5 mt-1 mb-3" id="bewertung">
+                                        <div class="card-body">
+                                            <div class="card-title">Anika Tankstell</div>
+                                            <div class="stars">
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                                <span class="star">&#9733</span>
+                                           </div>
+
+                                           <p class="card-text mt-2">
+                                            Passt alles.
+                                        </p>
+    
+                                    </div>
+               </div>
+              </div>
+              
+          </div>
+          
+          <h4 id="aehnlich-title">Ähnliche Angebote</h4>
+       
+            <div class="row mb-2" id="cards">
+                
+                 <div class="col-md-3 col-sm-6 col-xs-8" >
+    
+                                <div class="card mt-5" style="width: 18rem;" id="Card3">
+                                    <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;"><b>Ich suche</b></div>
+                                    <img class="card-img-top" src="../../media/pictures/Garten.png" width="30%" style="margin-top: 0px;">
+                                    <div class="card-body">
+    
+    
+    
+                                         <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
+    
+                                         <label for="iconMerkliste"><b>Gurke_678</b> <br> <small style="font-size: 10px;"><small style="color: gold;font-size: 10px;">4,8</small>(aus 5 Bewertungen)</small></label>
+    
+                                        <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
+                                            <p style><b>Gartenarbeit</b></p>
+    
+                                            <p>Ich kümmere mich um Ihren Garten abla blab
+                                                fewg sdggo9jgf godjfkgerg
+                                                 </p>
+                                                <br>
+                                        </div>
+    
+                                        <hr style="border: solid 1px;">
+                    
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" id="buttonMerken"><b>Merken</b></button>
+                                                </div>
+                                                <div class="col-md-offset-*">
+                                                    <p id="preis"><b>ab 1800 &#8364;</b></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+    
+                    </div>
+    
+                    <div class="col-md-3 col-sm-6 col-xs-8" >
+    
+                                <div class="card mt-5" style="width: 18rem;" id="Card3">
+                                    <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;"><b>Ich suche</b></div>
+                                    <img class="card-img-top" src="../../media/pictures/Garten.png" width="30%" style="margin-top: 0px;">
+                                    <div class="card-body">
+    
+    
+    
+                                         <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
+    
+                                         <label for="iconMerkliste"><b>Gurke_678</b> <br> <small style="font-size: 10px;"><small style="color: gold;font-size: 10px;">4,8</small>(aus 5 Bewertungen)</small></label>
+    
+                                        <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
+                                            <p style><b>Gartenarbeit</b></p>
+    
+                                            <p>Ich kümmere mich um Ihren Garten abla blab
+                                                fewg sdggo9jgf godjfkgerg
+                                                 </p>
+                                                <br>
+                                        </div>
+    
+                                        <hr style="border: solid 1px;">
+    
+                                        <div class="container">
+            
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" id="buttonMerken"><b>Merken</b></button>
+                                                </div>
+                                                <div class="col-md-offset-*">
+                                                    <p id="preis"><b>ab 1800 &#8364;</b></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+    
+                    </div>
+    
+                    <div class="col-md-3 col-sm-6 col-xs-8" >
+    
+                                <div class="card mt-5" style="width: 18rem;" id="Card3">
+                                    <div class="card-header text-center" style="background-color: rgb(136, 232, 171);font-size: 18px;"><b>Ich suche</b></div>
+                                    <img class="card-img-top" src="../../media/pictures/Garten.png" width="30%" style="margin-top: 0px;">
+                                    <div class="card-body">
+    
+    
+    
+                                         <img src="pics/iconMerkliste.png" width="35%" id="iconMerkliste">
+    
+                                         <label for="iconMerkliste"><b>Gurke_678</b> <br> <small style="font-size: 10px;"><small style="color: gold;font-size: 10px;">4,8</small>(aus 5 Bewertungen)</small></label>
+    
+                                        <div class="container" style="background-color: rgb(231, 250, 238) ;border: none;margin-top: 20px;">
+                                            <p style><b>Gartenarbeit</b></p>
+    
+                                            <p>Ich kümmere mich um Ihren Garten abla blab
+                                                fewg sdggo9jgf godjfkgerg
+                                                 </p>
+                                                <br>
+                                        </div>
+    
+                                        <hr style="border: solid 1px;">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" id="buttonMerken"><b>Merken</b></button>
+                                                </div>
+                                                <div class="col-md-offset-*">
+                                                    <p id="preis"><b>ab 1800 &#8364;</b></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+    
+                    </div>
+                </div>
+                <div class="container-fluid" id="impressum">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-2 col-sm-12 text-center">
+                           <p style="font-size: 10px;"> <b>CONTACT US</b> <br>
+                             +44 345 678 903 <br>
+                             adobexd@mail.com <br>
+                             Find a Store 
+                           </p>
+                                
+             
+                         </p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                         <p style="font-size: 10px;">
+                             <b>CUSTOMER SERVICE</b> <br>
+                             Contact Us <br>
+                             Ordering & Payment <br>
+                             Shipping <br>
+                             Returns <br>
+                             FAQ 
+                         </p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <p style="font-size: 10px;">
+                                <b>INFORMATION</b> <br>
+                                About Adobe US <br>
+                                Work With US  <br>
+                                Privacy Policy <br>
+                                Terms&Conditions <br>
+                                Press Enquries 
+             
+                            </p>
+                        </div>
+             
+                        <div class="col-md-2">
+                            <p style="font-size: 10px;" class="text-center">
+                                <b>Subscribe to Peer2Peer via Email</b> <br>
+                                Excepteur sint occaecat cupidatat non proident, sunt in 
+                     
+                                 culpa qui officia  
+                            </p>
+                            
+                            <input type="email" id="input" placeholder="Email Adress">
+                            <button  id="button-impressum">SUBSCRIBE</button >
+                        </div>
+             
+                         <div class="col-md-2 col-sm-12" style="margin-left: 12%;">
+                             <br><br><br>
+                             <p class="text-right"><b>&#169 Peer2Peer</b></p>
+                         </div>
+                       
+                    </div>
+                </div>
+                     
